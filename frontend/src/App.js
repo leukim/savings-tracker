@@ -1,6 +1,9 @@
 import './App.css';
 import React, {Component} from "react";
 import EmployeeList from "./components/EmployeeList";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Container, Row, Col} from "react-bootstrap";
+import NaviBar from "./components/NaviBar";
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +23,17 @@ class App extends Component {
 
   render() {
     return (
-        <EmployeeList employees={this.state.employees} />
+        <>
+            <NaviBar />
+            <Container fluid>
+                <Row>
+                    <Col>
+                        <EmployeeList employees={this.state.employees} />
+                    </Col>
+                </Row>
+            </Container>
+        </>
+
     )
   }
 }

@@ -1,12 +1,13 @@
 import React, {Component} from "react";
 import Employee from "./Employee";
+import {Table} from "react-bootstrap";
 
 class EmployeeList extends Component {
     render() {
         const employees = this.props.employees.map(employee => <Employee key={employee._links.self.href} employee={employee}/>);
 
         return (
-            <table>
+            <Table bordered>
                 <tbody>
                     <tr>
                         <th>First Name</th>
@@ -15,7 +16,7 @@ class EmployeeList extends Component {
                     </tr>
                     {employees}
                 </tbody>
-            </table>
+            </Table>
         )
     }
 }
